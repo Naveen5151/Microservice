@@ -25,4 +25,7 @@ jobs:
           context: ./Sample1/
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/sample-app-first-latest
+          cache-from: type=registry,ref=user/sample-app-first-latest
+          cache-to: type=inline
+
      
