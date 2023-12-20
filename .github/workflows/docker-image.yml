@@ -26,7 +26,7 @@ jobs:
       - name: Docker image push
         uses: docker/build-push-action@v5
         with:
-          context: ./Sample1/
+          context: ./app/publish/
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/sample-app-first-latest
      
