@@ -9,7 +9,7 @@ COPY ["Sample1/Sample1.csproj", "Sample1/"]
 RUN dotnet restore "Sample1/Sample1.csproj"
 WORKDIR "/src/Sample1"
 COPY . .
-RUN dotnet clean
+CMD rm -rf bin obj
 RUN dotnet build "Sample1.csproj" -c Release -o /app/build
 
 FROM build AS publish
