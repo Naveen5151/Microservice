@@ -8,8 +8,8 @@ WORKDIR /src
 COPY ["Sample1/Sample1.csproj", "Sample1/"]
 RUN dotnet restore "Sample1/Sample1.csproj"
 WORKDIR "/src/Sample1"
-RUN ls && pwd
 COPY . .
+RUN ls && pwd
 RUN dotnet build "Sample1.csproj" -c Release -o /app/build
 
 FROM build AS publish
