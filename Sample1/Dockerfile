@@ -7,8 +7,8 @@ FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY ["Sample1/Sample1.csproj", "Sample1/"]
 RUN dotnet restore "Sample1/Sample1.csproj"
-WORKDIR "/src/Sample1"
 COPY . .
+WORKDIR "/src/Sample1"
 RUN dotnet build "Sample1.csproj" -c Release -o /app/build
 
 FROM build AS publish
