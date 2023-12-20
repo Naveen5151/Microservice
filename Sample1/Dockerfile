@@ -9,7 +9,7 @@ COPY ["Sample1/Sample1.csproj", "Sample1/"]
 RUN dotnet restore "Sample1/Sample1.csproj"
 WORKDIR "/src/Sample1"
 COPY . .
-Run "apt install tree -y"
+Run "apt-get install tree -y"
 RUN tree && ls && pwd
 RUN dotnet build "Sample1.csproj" -c Release -o /app/build
 
