@@ -25,7 +25,7 @@ jobs:
       - name: Docker image push
         uses: docker/build-push-action@v5
         with:
-          context: ./Dockerfile
+          context: .
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/sample-app-first-latest
           cache-from: type=registry,ref=user/sample-app-first-latest
