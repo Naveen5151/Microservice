@@ -1,7 +1,6 @@
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS base
 WORKDIR /app
-EXPOSE 80
-EXPOSE 443
+EXPOSE 5001
 
 # Build Stage
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
