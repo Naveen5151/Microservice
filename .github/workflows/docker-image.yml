@@ -22,11 +22,12 @@ jobs:
           
       - name: Build the Docker image
         run: docker build . --file ./Sample1/Dockerfile --tag my-image-name:$(date +%s)
+        
 
       - name: Docker image push
         uses: docker/build-push-action@v5
         with:
-          context: ./app/publish/
+          context: .
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/sample-app-first-latest
      
